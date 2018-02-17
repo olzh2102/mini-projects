@@ -1,3 +1,4 @@
+
 .card-title {
 	text-transform: uppercase;
 }
@@ -15,4 +16,10 @@
 	background-color: #80081E !important;
 	box-sizing: border-box;
 	margin-left: -10px;
+}
+
+.collection-item {
+	display: block;
+	margin-bottom: 10px;
+	margin-left: 15px;
 }
