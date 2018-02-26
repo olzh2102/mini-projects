@@ -1,7 +1,7 @@
 // Game values
 let min = 1,
 		max = 10,
-		guessNum = 3,
+		guessesLeft = 3,
 		winningNum = 7;
 
 // UI Elements
@@ -27,16 +27,42 @@ guessBtn.addEventListener('click', function() {
 
 	// Check if it is winning number
 	if(guess === winningNum) {
-		// Disable the input
-		guessInput.disabled = true;
+		gameOver(true, `${winningNum} is correct, YOU WIN!`);
+	} else {
+		// Wrong answer
+		guessesLeft -= 1;
 
-		// Change the border color
-		guessInput.style.borderColor = 'green';
+		if(guessesLeft === 0) {
+			gameOver(false, `Game Ovaer, you lost. The correct number was ${winningNum}`)
+		} else {
+			// Wrong answer - game proceeds
 
-		// Set message
-		setMessage(`${winningNum} is correct, YOU WIN!`, 'green');
+			// Clear the input field
+			guessInput.value = '';
+
+			// Change the border color
+			guessInput.style.borderColor = '#b00b1e';
+
+			// Tell user its wrong number
+			setMessage(`${guess} is wrong, ${guessesLeft} guesses left`, '#b00b1e');
+		}
 	}
 });
+
+// Game over
+function gameOver(won, msg) {
+	let color;
+	won === true ? color = 'green' : color = '#b00b1e';
+
+	// Disable the input
+	guessInput.disabled = true;
+
+	// Change the border color
+	guessInput.style.borderColor = color;
+
+	// Tell user its wrong number
+	setMessage(msg, color);
+}
 
 
 // Set message
