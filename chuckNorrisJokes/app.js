@@ -23,7 +23,7 @@ function getJokes(event) {
 				output += '<li>Something went wrong</li>'
 			}
 
-			document.querySelector('.jokes').innerHTML = output;    
+			document.querySelector('.jokes').innerHTML = output;
 		}
 	}
 
