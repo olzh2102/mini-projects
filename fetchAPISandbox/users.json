@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Harry",
+    "email": "harrypotter@gmail.com"
+  },
+  {
+    "id": 2,
+    "name": "Ronald",
+    "email": "ronwesley@gmail.com"
+  },
+  {
+    "id": 3,
+    "name": "Hermione",
+    "email": "hermionegraneger@gmail.com"
+  }
+]
